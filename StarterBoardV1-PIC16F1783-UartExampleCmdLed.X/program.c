@@ -294,7 +294,8 @@ void uart_Initialize(uint32_t fosc, uint32_t baudrate) {
     RCSTAbits.SPEN = 1;     // Set enable serial port
     RCSTAbits.RX9 = 0;      // Set UART module to use 8bit reception mode
     RCSTAbits.CREN = 1;     // Set enable receiver
-    
+
+    // Datasheet page 322
     BAUDCONbits.BRG16 = 1;  // Set UART module baud rate period to use 16bit register
     BAUDCONbits.ABDEN = 0;  // Set UART module not to use baud rate auto detect mode
     
