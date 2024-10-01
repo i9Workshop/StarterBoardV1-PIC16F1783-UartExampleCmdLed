@@ -1,1 +1,1 @@
-## UAT - Serial USB Bridge
+## UART - Serial USB Bridge
