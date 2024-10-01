@@ -281,8 +281,8 @@ void lcd_PrintDigitInt32(int32_t number, uint8_t noDigit, bool enSign, bool enZe
 
 void uart_Initialize(uint32_t fosc, uint32_t baudrate) {
     // Datasheet page 320
-    TXSTAbits.CSRC = 0;     // UART module clock source generated internally from BRG
-    TXSTAbits.TX9 = 0;      // Disable 9bit transmission
+    TXSTAbits.CSRC = 0;     // Set UART module clock source generated internally from BRG
+    TXSTAbits.TX9 = 0;      // Set disable 9bit transmission
     TXSTAbits.TXEN = 1;     // Set enable UART module
     TXSTAbits.SYNC = 0;     // Set UART module to use asynchronous mode
     TXSTAbits.BRGH = 0;     // Set UART module to use low speed baud rate
