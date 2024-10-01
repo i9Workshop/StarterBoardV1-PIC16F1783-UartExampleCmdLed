@@ -1,1 +1,1 @@
-## UART - Serial USB Bridge
+## UART Module - Serial USB Bridge
