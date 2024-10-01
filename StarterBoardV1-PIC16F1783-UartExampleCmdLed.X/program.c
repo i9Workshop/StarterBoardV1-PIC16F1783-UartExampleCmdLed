@@ -365,7 +365,7 @@ void uart_ScanRxRegister(void) {
         lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
         
         // Condition to control LEDs using RxData received
-        // Refer to ASCII table to use software Serial Monitor
+        // Refer to ASCII table to use software serial monitor
         
         if(RxData=='1') {
             led1 = 1;
