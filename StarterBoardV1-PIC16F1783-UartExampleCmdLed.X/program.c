@@ -70,6 +70,9 @@ void programInitialize(void) {
     lcd_Goto(0, 0);
     lcd_PrintString("UART TxRx");
     
+    lcd_Goto(1, 0);
+    lcd_PrintDigitInt32(RxData, 3, false, true);
+    
     uart_Initialize(_User_FOSC, 115200);
     
     uart_PrintString("UART Transceiver\n");
@@ -359,7 +362,7 @@ void uart_ScanRxRegister(void) {
         RxData = RCREG; // Write RCREG register into RxData - Page 318
         
         lcd_Goto(1, 0);
-        lcd_PrintChar(RxData); // Display RxData on LCD
+        lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
         
         // Condition to control LEDs using RxData received
         // Refer to ASCII table to use software Serial Monitor
