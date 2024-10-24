@@ -286,7 +286,6 @@ void uart_Initialize(uint32_t fosc, uint32_t baudrate) {
     // Datasheet page 320
     TXSTAbits.CSRC = 0;     // Set UART module clock source generated internally from BRG
     TXSTAbits.TX9 = 0;      // Set disable 9bit transmission
-    TXSTAbits.TXEN = 1;     // Set enable UART module
     TXSTAbits.SYNC = 0;     // Set UART module to use asynchronous mode
     TXSTAbits.BRGH = 0;     // Set UART module to use low speed baud rate
     
@@ -305,6 +304,8 @@ void uart_Initialize(uint32_t fosc, uint32_t baudrate) {
     
     SPBRGH = (uint8_t)(brgPeriod << 8);
     SPBRGL = (uint8_t)brgPeriod;
+    
+    TXSTAbits.TXEN = 1;     // Set enable UART module - Page 320
     
     delay_x1o5us(23); // Wait for UART to reconfigure BRG - Page 373 from I/O pin timing
 }
