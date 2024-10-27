@@ -25,7 +25,7 @@
 
 void main(void) {
     delay_ms(100); // Wait for PSU power up
-    delay_ms(141); // Wait for device to start up
+    delay_x1o5us(86); // Wait for device to start up, Tost = 128us
     
     programInitialize(); // Initialize prorgram
     
