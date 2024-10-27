@@ -307,7 +307,8 @@ void uart_Initialize(uint32_t fosc, uint32_t baudrate) {
     
     TXSTAbits.TXEN = 1;     // Set enable UART module - Page 320
     
-    delay_x1o5us(23); // Wait for UART to reconfigure BRG - Page 373 from I/O pin timing
+    delay_x1o5us(2); // Wait for UART module configuration - Page 373 from I/O pin timing
+                     // Tioz = 2us
 }
 
 void uart_PrintChar(char character) {
