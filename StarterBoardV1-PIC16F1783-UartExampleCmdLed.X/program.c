@@ -99,7 +99,7 @@ void programLoop(void) {
         pb_DelayDebounce();
     }
     
-    uart_ScanRxRegister();
+    uart_PollRxRegister();
 }
 
 
@@ -357,7 +357,7 @@ void uart_PrintInt32(int32_t number) {
     uart_PrintString(numberChar);
 }
 
-void uart_ScanRxRegister(void) {
+void uart_PollRxRegister(void) {
     // Single byte data receiver
     if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
         while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
